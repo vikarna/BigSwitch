@@ -2,13 +2,15 @@
 Prometheus exporter for Big cloud fabric(BCF)
 
 1. Install required packages
-   
-   pip install prometheus_client requests
+
+-
+    pip install prometheus_client requests
 
 2. Replace the username/password and IP of BCF controller in the exporter.py
 
 3. Running the program
 
+-
 
     python exporter.py
     
