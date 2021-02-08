@@ -14,7 +14,7 @@ class JsonCollector(object):
     
 #Replace the username(admin) and password(admin) with your BCF controller login credentials 	
 	
-	data = { "user" : "admin", "password" : "admin" }
+    data = { "user" : "admin", "password" : "admin" }
   
 #Replace the ip address(1.1.1.1) with your BCF controller vip address
 
