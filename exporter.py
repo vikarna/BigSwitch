@@ -12,18 +12,16 @@ class JsonCollector(object):
         pass
   def collect(self):
     
-#Replace the username and password with your BCF controller login credentials 	
+#Replace the username(admin) and password(admin) with your BCF controller login credentials 	
 	
-	data = { "user" : "admin", "password" : "mavenir" }
+	data = { "user" : "admin", "password" : "admin" }
   
-#Replace the ip address with your BCF controller vip address
+#Replace the ip address(1.1.1.1) with your BCF controller vip address
 
-    r = requests.post('https://10.69.88.97:8443/api/v1/auth/login',data=json.dumps(data),verify=False)
+    r = requests.post('https://1.1.1.1:8443/api/v1/auth/login',data=json.dumps(data),verify=False)
     token = json.loads(r.text)['session_cookie']
     headers = { 'Cookie' : 'session_cookie= ' + token }
-
-#Get the interface counters
-    response = json.loads(requests.get('https://10.69.88.97:8443/api/v1/data/controller/applications/bcf/info/statistic/interface-counter',verify=False,headers=headers).content.decode('UTF-8'))
+    response = json.loads(requests.get('https://1.1.1.1:8443/api/v1/data/controller/applications/bcf/info/statistic/interface-counter',verify=False,headers=headers).content.decode('UTF-8'))
 
 #Parse the output and read through it 
     x = range(len(response))
